@@ -9,7 +9,7 @@ url = sys.argv[1]
 
 class webcapture():
     def parseUrl(self):
-        if re.match(r'^http\:\/\/|^https\:\/\/',url):
+        if re.match(r'^https?\:\/\/',url):
             print('This is URL format.')
         else:
             print('This is not URL format.')
