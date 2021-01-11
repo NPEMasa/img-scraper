@@ -20,8 +20,15 @@ def main():
 
     # urlctrlクラス読み込み
     uct = urlctrl.urlctrl()
-    result = uct.pickDomain(url)
-    print("Domain : %s" % result)
+
+    # domain match
+    domResult = uct.pickDomain(url)
+
+    # path match
+    pathResult = uct.pickPath(url)
+
+    print("Domain : %s" % domResult)
+    print("Path   : %s" % pathResult)
 
 if __name__ == "__main__":
     main()
