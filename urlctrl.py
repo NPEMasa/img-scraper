@@ -47,3 +47,8 @@ class urlctrl:
             result = '[*]Don\'t path match.'
 
         return result
+
+    # ファイル名抽出関数
+    def pickFilename(self, url):
+
+
