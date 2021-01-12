@@ -1,6 +1,9 @@
 # -*- coding: utf-8 -*-
 
 import re
+import sys
+
+sys.dont_write_bytecode = True
 
 class urlctrl:
 
@@ -32,19 +35,19 @@ class urlctrl:
     def pickPath(self, url):
 
         # スキーム削除パターン
-        delPtn = r'^https?://'
+        # delPtn = r'^https?://'
 
         # パス抽出パターン
-        pathPtn = r'/([^\r\n].*)'
+        # pathPtn = r'/([^\r\n].*)'
 
         # 引数取得
         self.URL = url
 
         # ディレクトリパス配下を取得し配列へ格納
-        if(re.search(pathPtn, self.URL)):
+        if(self.pathPtn.search(self.URL)):
 
-            delSchema = re.sub(delPtn, "", self.URL)
-            matched = re.findall(pathPtn, delSchema)
+            delSchema = self.delPtn.sub('', self.URL)
+            matched = self.pathPtn.findall(delSchema)
             result = matched[0]
 
         else:

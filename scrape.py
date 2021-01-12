@@ -5,6 +5,7 @@ import re
 import sys
 import urlctrl
 
+sys.dont_write_bytecode = True
 url = sys.argv[1]
 
 class webcapture():
