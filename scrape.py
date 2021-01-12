@@ -27,8 +27,12 @@ def main():
     # path match
     pathResult = uct.pickPath(url)
 
-    print("Domain : %s" % domResult)
-    print("Path   : %s" % pathResult)
+    # filename match
+    filenameResult = uct.pickFilename(url)
+
+    print("Domain   : %s" % domResult)
+    print("Path     : %s" % pathResult)
+    print("Filename : %s" % filenameResult)
 
 if __name__ == "__main__":
     main()
