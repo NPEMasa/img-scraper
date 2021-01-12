@@ -34,12 +34,6 @@ class urlctrl:
     # パス抽出関数
     def pickPath(self, url):
 
-        # スキーム削除パターン
-        # delPtn = r'^https?://'
-
-        # パス抽出パターン
-        # pathPtn = r'/([^\r\n].*)'
-
         # 引数取得
         self.URL = url
 
