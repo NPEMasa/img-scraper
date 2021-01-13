@@ -14,7 +14,7 @@ class urlctrl:
     # パス抽出パターン
     pathPtn = re.compile(r'(.*\/[\w\/]+\/)')
     # ファイル名抽出パターン
-    filenamePtn = re.compile(r'([\w.#=?&]+)[\r\n]')
+    # filenamePtn = re.compile(r'([\w.#=?&]+)[\r\n]')
     
     # ドメイン抽出関数
     def pickDomain(self, url):
