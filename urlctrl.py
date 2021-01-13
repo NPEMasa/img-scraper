@@ -12,9 +12,9 @@ class urlctrl:
     # ドメイン抽出パターン
     protoPtn = re.compile(r'^https?:\/\/([\w][^\/]*)')
     # パス抽出パターン
-    pathPtn = re.compile(r'/([^\r\n].*)')
+    pathPtn = re.compile(r'(.*\/[\w\/]+\/)')
     # ファイル名抽出パターン
-    filenamePtn = re.compile(r'/([\w=#.?]+)\r\n')
+    filenamePtn = re.compile(r'([\w.#=?&]+)[\r\n]')
     
     # ドメイン抽出関数
     def pickDomain(self, url):
@@ -53,25 +53,13 @@ class urlctrl:
     # ファイル名抽出関数
     def pickFilename(self, url):
 
-        # スキーム削除パターン
-        delPtn = r'^https?:\/\/'
-
-        # ファイル名抽出パターン
-        filenamePtn = r'/([\w=#.?]+)\r\n'
-
         # 引数取得
         self.URL = url
 
         # ファイル名（クエリストリング含む）を取得し配列へ格納
-        if(re.search(filenamePtn, self.URL)):
-
-            delSchema = re.sub(delPtn, "", self.URL)
-            matched = re.findall(filenamePtn, delSchema)
-            result = matched[0]
-
-        else:
-
-            result = '[*]Don\'t Filename match.'
+        delSchema = self.delPtn.sub("", self.URL)
+        delPath = self.pathPtn.sub("", delSchema)
+        result = delPath
 
         return result
 
