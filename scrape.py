@@ -31,9 +31,18 @@ def main():
     # filename match
     filenameResult = uct.pickFilename(url)
 
+    # querystring match
+    querystringResult = uct.pickQuerystring(url)
+
+    # portnumber match
+    #-- portnumberResult = uct.pickPortnumber(url)
+
+
     print("Domain   : %s" % domResult)
     print("Path     : %s" % pathResult)
     print("Filename : %s" % filenameResult)
+    #-- print("Port     : %s" % portnumberResult)
+    print("Query    : %s" % querystringResult)
 
 if __name__ == "__main__":
     main()
