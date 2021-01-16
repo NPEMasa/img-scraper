@@ -79,7 +79,6 @@ class urlctrl:
         self.URL = url
 
         # クエリストリングのみを取得し配列へ格納
-        # delSchema = self.queryPtn.sub("", self.URL)
         pickSchema = self.queryPtn.findall(self.URL)
         result =  pickSchema[0]
 
@@ -96,7 +95,6 @@ class urlctrl:
         self.URL = url
 
         # ポート番号を抽出し配列へ格納
-        # delSchema = self.portPtn.sub("", self.URL)
         pickSchema = self.portPtn.findall(self.URL)
         result = pickSchema[0]
 
