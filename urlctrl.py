@@ -18,9 +18,6 @@ class urlctrl:
     # ポート番号抽出パターン
     portPtn = re.compile(r':([\w]+)')
 
-    # ファイル名抽出パターン
-    # filenamePtn = re.compile(r'([\w.#=?&]+)[\r\n]')
-    
     # ドメイン抽出関数
     def pickDomain(self, url):
 
