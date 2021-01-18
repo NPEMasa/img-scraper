@@ -4,6 +4,7 @@ import requests
 import re
 import sys
 import urlctrl
+import network
 
 sys.dont_write_bytecode = True
 url = sys.argv[1]
@@ -19,6 +20,9 @@ def main():
     cap = webcapture()
     cap.parseUrl()
 
+    pin = network.networkClass()
+
+
     # urlctrlクラス読み込み
     uct = urlctrl.urlctrl()
 
@@ -32,7 +36,7 @@ def main():
     filenameResult = uct.pickFilename(url)
 
     # querystring match
-    querystringResult = uct.pickQuerystring(url)
+    #-- querystringResult = uct.pickQuerystring(url)
 
     # portnumber match
     #-- portnumberResult = uct.pickPortnumber(url)
@@ -42,7 +46,11 @@ def main():
     print("Path     : %s" % pathResult)
     print("Filename : %s" % filenameResult)
     #-- print("Port     : %s" % portnumberResult)
-    print("Query    : %s" % querystringResult)
+    #-- print("Query    : %s" % querystringResult)
+
+    pinres = pin.doPing(domResult)
+    print("- - - - - - - - - - ")
+    print(pinres)
 
 if __name__ == "__main__":
     main()
