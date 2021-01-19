@@ -8,6 +8,7 @@ This tool work on the web.
 
 - Python3
 - pings(pip)
+- ```sudo``` or ```su - ```
 
 ## Features
 
@@ -28,7 +29,9 @@ This tool work on the web.
 
 ## Usage
 #### Execute this program.
-```$ python3 scrape.py https://<yourdomain>/<target path>```
+```$ sudo python3 scrape.py https://<yourdomain>/<target path>```
+or
+```# python3 scrape.py https://<yourdomain>/<target path>```
 
 
 ## Author
