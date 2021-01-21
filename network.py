@@ -8,6 +8,7 @@ sys.dont_write_bytecode = True
 
 class networkClass:
 
+    # ping用関数
     def doPing(self, url):
 
         self.URL = url
