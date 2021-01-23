@@ -20,6 +20,6 @@ class networkClass:
             res = result.print_messages()
 
         else:
-            res = "No route to host"
+            res = "No response"
 
         return res
